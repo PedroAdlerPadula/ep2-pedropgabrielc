@@ -12,7 +12,16 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
     for i in range(len(dados_rolados)):
         if i == dado_para_guardar:
             dados_no_estoque.append(dados_rolados[i])
-            dados_rolados[i] not in dados_rolados
         else:
             dados_rolados2.append(dados_rolados[i])
+    return lista_final
+
+def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
+    dados_no_estoque2 = []
+    lista_final = [dados_rolados, dados_no_estoque2]
+    for i in range(len(dados_no_estoque)):
+        if i == dado_para_remover:
+            dados_rolados.append(dados_no_estoque[i])
+        else:
+            dados_no_estoque2.append(dados_no_estoque[i])
     return lista_final

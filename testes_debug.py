@@ -1,7 +1,7 @@
 from funcoes import *
 
-dados_rolados = [1, 3, 2]
-dados_no_estoque = [1, 2]
-dado_para_guardar = 1
+dados_rolados = [2, 2, 2, 2]
+dados_no_estoque = [1]
+dado_para_remover = 0
 
-print(guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar))
+print(remover_dado(dados_rolados, dados_no_estoque, dado_para_remover))
