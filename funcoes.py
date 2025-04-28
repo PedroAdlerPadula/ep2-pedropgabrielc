@@ -27,10 +27,31 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
     return lista_final
 
 def calcula_pontos_regra_simples(dados_rolados):
+    dicio_final = {}
     soma_face1 = 0
     soma_face2 = 0
     soma_face3 = 0
     soma_face4 = 0
     soma_face5 = 0
     soma_face6 = 0
-    for i in range(1, 6):
+    for i in range(len(dados_rolados)):
+        if dados_rolados[i] == 1:
+            soma_face1 +=1
+        if dados_rolados[i] == 2:
+            soma_face2 +=2
+        if dados_rolados[i] == 3:
+            soma_face3 +=3
+        if dados_rolados[i] == 4:
+            soma_face4 +=4
+        if dados_rolados[i] == 5:
+            soma_face5 +=5
+        if dados_rolados[i] == 6:
+            soma_face6 +=6
+    dicio_final[1] = soma_face1
+    dicio_final[2] = soma_face2
+    dicio_final[3] = soma_face3
+    dicio_final[4] = soma_face4
+    dicio_final[5] = soma_face5
+    dicio_final[6] = soma_face6
+
+    return dicio_final
