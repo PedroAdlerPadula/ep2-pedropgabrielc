@@ -25,3 +25,12 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
         else:
             dados_no_estoque2.append(dados_no_estoque[i])
     return lista_final
+
+def calcula_pontos_regra_simples(dados_rolados):
+    soma_face1 = 0
+    soma_face2 = 0
+    soma_face3 = 0
+    soma_face4 = 0
+    soma_face5 = 0
+    soma_face6 = 0
+    for i in range(1, 6):
