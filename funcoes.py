@@ -63,7 +63,12 @@ def calcula_pontos_soma(dados_rolados):
     return soma_final
 
 def calcula_pontos_sequencia_baixa(dados_rolados):
-    possibilidade_1 = [1,2,3,4]
-    possibilidade_2 = [2,3,4,5]
-    possibilidade_3 = [3,4,5,6]
-    if possibilidade_1
+    if 1 in dados_rolados and 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados:
+        return 15
+    if 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados:
+        return 15
+    if 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados and 6 in dados_rolados:
+        return 15
+    else:
+        return 0
+    
