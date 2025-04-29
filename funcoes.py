@@ -55,3 +55,9 @@ def calcula_pontos_regra_simples(dados_rolados):
     dicio_final[6] = soma_face6
 
     return dicio_final
+
+def calcula_pontos_soma(dados_rolados):
+    soma_final = 0
+    for i in range(len(dados_rolados)):
+        soma_final += dados_rolados[i]
+    return soma_final
