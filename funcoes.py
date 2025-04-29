@@ -65,10 +65,19 @@ def calcula_pontos_soma(dados_rolados):
 def calcula_pontos_sequencia_baixa(dados_rolados):
     if 1 in dados_rolados and 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados:
         return 15
-    if 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados:
+    elif 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados:
         return 15
-    if 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados and 6 in dados_rolados:
+    elif 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados and 6 in dados_rolados:
         return 15
     else:
         return 0
+
+def calcula_pontos_sequencia_alta(dados_rolados):
+    if 1 in dados_rolados and 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados:
+        return 30
+    elif 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados and 6 in dados_rolados:
+        return 30
+    else:
+        return 0
+
     
