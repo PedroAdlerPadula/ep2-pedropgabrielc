@@ -79,5 +79,26 @@ def calcula_pontos_sequencia_alta(dados_rolados):
         return 30
     else:
         return 0
-
+    
+def calcula_pontos_full_house(dados_rolados):
+    lista1 = [dados_rolados[0]]
+    lista2 = []
+    soma = 0
+    for i in range(len(dados_rolados)):
+        soma += dados_rolados[i]
+    for i in range(1,len(dados_rolados)):
+        if dados_rolados[i] not in lista1:
+            lista2.append(dados_rolados[i])
+        elif dados_rolados[i] in lista1:
+            lista1.append(dados_rolados[i])
+        elif dados_rolados[i] in lista2:
+            lista2.append(dados_rolados[i])
+    if len(lista1) == 3 and len(lista2) == 2:
+        if lista2[0] == lista2[1]:
+            return soma
+    if len(lista1) == 2 and len(lista2) == 3:
+        if lista2[0] == lista2[1] == lista2[2]:
+            return soma
+    
+    return 0
     
