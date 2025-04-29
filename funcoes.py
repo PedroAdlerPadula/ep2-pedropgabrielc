@@ -99,6 +99,6 @@ def calcula_pontos_full_house(dados_rolados):
     if len(lista1) == 2 and len(lista2) == 3:
         if lista2[0] == lista2[1] == lista2[2]:
             return soma
-    
     return 0
+
     
