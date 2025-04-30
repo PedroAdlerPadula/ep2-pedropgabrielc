@@ -143,3 +143,21 @@ def calcula_pontos_quina(lista_valores):
     else:
         return 0
 
+#ex 11 
+def calcula_pontos_regra_avancada(valores):
+    sem_comb = calcula_pontos_soma(valores)
+    seq_baixa = calcula_pontos_sequencia_baixa(valores)
+    seq_alta = calcula_pontos_sequencia_alta(valores)
+    full_house = calcula_pontos_full_house(valores)
+    quadra = calcula_pontos_quadra(valores)
+    cinco_iguais = calcula_pontos_quina(valores)
+
+    dicio_final = {
+    'cinco_iguais': cinco_iguais,
+    'full_house': full_house,
+    'quadra': quadra,
+    'sem_combinacao': sem_comb,
+    'sequencia_alta': seq_alta,
+    'sequencia_baixa': seq_baixa
+}
+    return dicio_final
