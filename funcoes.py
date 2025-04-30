@@ -161,3 +161,15 @@ def calcula_pontos_regra_avancada(valores):
     'sequencia_baixa': seq_baixa
 }
     return dicio_final
+
+# ex 12
+def faz_jogada(dados, categoria, cartela):
+    if categoria in ['1', '2', '3', '4', '5', '6']:
+        pontos_por_numero = calcula_pontos_regra_simples(dados)
+        cartela['regra_simples'][int(categoria)] = pontos_por_numero[int(categoria)]
+    else:
+        pontos_avancados = calcula_pontos_regra_avancada(dados)
+        cartela['regra_avancada'][categoria] = pontos_avancados[categoria]
+    
+    return cartela
+
