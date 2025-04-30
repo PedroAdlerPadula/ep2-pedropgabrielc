@@ -1,3 +1,4 @@
+# ex 1
 import random
 def rolar_dados(numero):
     lista_final = []
@@ -6,6 +7,7 @@ def rolar_dados(numero):
         lista_final.append(num)
     return lista_final
 
+#ex 2
 def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
     dados_rolados2 = []
     lista_final = [dados_rolados2, dados_no_estoque]
@@ -16,6 +18,7 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
             dados_rolados2.append(dados_rolados[i])
     return lista_final
 
+#ex 3
 def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
     dados_no_estoque2 = []
     lista_final = [dados_rolados, dados_no_estoque2]
@@ -26,6 +29,7 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
             dados_no_estoque2.append(dados_no_estoque[i])
     return lista_final
 
+#ex 4
 def calcula_pontos_regra_simples(dados_rolados):
     dicio_final = {}
     soma_face1 = 0
@@ -56,12 +60,14 @@ def calcula_pontos_regra_simples(dados_rolados):
 
     return dicio_final
 
+#ex 5
 def calcula_pontos_soma(dados_rolados):
     soma_final = 0
     for i in range(len(dados_rolados)):
         soma_final += dados_rolados[i]
     return soma_final
 
+#ex 6
 def calcula_pontos_sequencia_baixa(dados_rolados):
     if 1 in dados_rolados and 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados:
         return 15
@@ -72,6 +78,7 @@ def calcula_pontos_sequencia_baixa(dados_rolados):
     else:
         return 0
 
+#ex 7
 def calcula_pontos_sequencia_alta(dados_rolados):
     if 1 in dados_rolados and 2 in dados_rolados and 3 in dados_rolados and 4 in dados_rolados and 5 in dados_rolados:
         return 30
@@ -79,7 +86,7 @@ def calcula_pontos_sequencia_alta(dados_rolados):
         return 30
     else:
         return 0
-    
+#ex 8 
 def calcula_pontos_full_house(dados_rolados):
     lista1 = [dados_rolados[0]]
     lista2 = []
@@ -101,4 +108,22 @@ def calcula_pontos_full_house(dados_rolados):
             return soma
     return 0
 
-    
+#ex 9
+def calcula_pontos_quadra(lista_faces):
+    dicio = {}
+    soma = 0
+    contagem = 0 
+    for i in range(len(lista_faces)):
+        soma += lista_faces[i]
+
+    for i in lista_faces:
+        if i in dicio:
+            dicio[i] += 1
+        else:
+            dicio[i] = 1
+
+    for k in dicio.values():
+        if k >= 4:
+            return soma
+    else:
+        return 0
