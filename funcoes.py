@@ -127,3 +127,19 @@ def calcula_pontos_quadra(lista_faces):
             return soma
     else:
         return 0
+    
+#ex 10
+def calcula_pontos_quina(lista_valores):
+    dicio = {}
+    for i in lista_valores:
+        if i in dicio:
+            dicio[i] += 1
+        else:
+            dicio[i] = 1
+
+    for k in dicio.values():
+        if k >= 5:
+            return 50
+    else:
+        return 0
+
