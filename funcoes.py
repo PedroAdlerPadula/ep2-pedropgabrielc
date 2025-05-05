@@ -174,7 +174,6 @@ def faz_jogada(dados, categoria, cartela):
     return cartela
 
 # funcção ex 13 
-
 def imprime_cartela(cartela):
     print("Cartela de Pontos:")
     print("-"*25)    
