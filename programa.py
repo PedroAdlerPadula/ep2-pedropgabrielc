@@ -30,13 +30,13 @@ while contagem < 12:
     jogando = True 
     rolar_novamente = 0 
     while jogando:
-        print("Dados rolados: {} ".format(dados))
-        print("Dados guardados: {} ".format(dados_guardados))
+        print("Dados rolados: {}".format(dados))
+        print("Dados guardados: {}".format(dados_guardados))
         print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
         entrada = input(">")
 
         while entrada != "0" and entrada != "1" and entrada != "2" and entrada != "3" and entrada != "4":
-            print("Opção invalida. Tente novamente.")
+            print("Opção inválida. Tente novamente.")
             entrada = input(">")
 
         if entrada == "0":
@@ -79,7 +79,7 @@ while contagem < 12:
 
         elif entrada == "3":
             if rolar_novamente >= 2:
-                print("Você usou todas as rerrolagens.")
+                print("Você já usou todas as rerrolagens.")
             else:
                 dados = rolar_dados(len(dados))
                 rolar_novamente += 1
@@ -87,15 +87,25 @@ while contagem < 12:
         elif entrada == "4":
             imprime_cartela(armazena_pontos)
 
-    if armazena_pontos["regra_simples"][1] != -1 and armazena_pontos["regra_simples"][2] != -1 and armazena_pontos["regra_simples"][3] != -1 and armazena_pontos["regra_simples"][4] != -1 and armazena_pontos["regra_simples"][5] != -1 and armazena_pontos["regra_simples"][6] != -1:
-        jogando = False
-        contagem = 12
+    if -1 not in armazena_pontos["regra_simples"].values() and  -1 not in armazena_pontos["regra_avancada"].values():
+        break
+
 
     contagem += 1
 
-pontuacao_final = armazena_pontos["regra_simples"][1] + armazena_pontos["regra_simples"][2] + armazena_pontos["regra_simples"][3] + armazena_pontos["regra_simples"][4] + armazena_pontos["regra_simples"][5] + armazena_pontos["regra_simples"][6]
-simples = armazena_pontos["regra_simples"][1] + armazena_pontos["regra_simples"][2] + armazena_pontos["regra_simples"][3] + armazena_pontos["regra_simples"][4] + armazena_pontos["regra_simples"][5] + armazena_pontos["regra_simples"][6]
-if simples >= 63:
-    pontuacao_final = pontuacao_final + 35
+soma_regra_simples = 0
+for valor in armazena_pontos['regra_simples'].values():
+    if valor != -1:
+        soma_regra_simples += valor
+
+soma_regra_avancada = 0
+for valor in armazena_pontos['regra_avancada'].values():
+    if valor != -1:
+        soma_regra_avancada += valor
+
+valor_total = soma_regra_simples + soma_regra_avancada
+
+if soma_regra_simples >= 63:
+    valor_total += 35
 imprime_cartela(armazena_pontos)
-print("Pontuação total: {}".format(pontuacao_final))
+print("Pontuação total: {}".format(valor_total))
